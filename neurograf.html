@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neurograf Pitch</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Screen styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+    .slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+      min-height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .bg-ai {
+        background-image: url('https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .bg-ai::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .bg-ai .content {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(0.5, 0.5, 0.5, 0.6);
+      padding: 2rem;
+      border-radius: 1rem;
+      color: white;
+    }
+    .card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h2 { color: #374151; }
+    p, li { color: #4b5563; }
+    /* Override for title slide content */
+    .bg-ai .content p,
+    .bg-ai .content h1,
+    .bg-ai .content h2,
+    .bg-ai .content * {
+      color: white;
+    }
+
+    /* Logo gradient for title heading */
+    .bg-ai .content h1 {
+      background: linear-gradient(90deg, #9333EA, #4F46E5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+        /* Print styles */
+    @page {
+      size: letter landscape;
+      margin: 0;
+    }
+    @media print {
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .slide {
+        page-break-before: always;
+        page-break-inside: avoid;
+        margin: 0;
+        padding: 1cm;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+      }
+      .slide:first-child {
+        page-break-before: auto;
+      }
+      .card { box-shadow: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Slide 1: Title -->
+  <section class="slide bg-ai text-white text-center">
+    <div class="content">
+      <h1 class="text-6xl font-bold">Neurograf</h1>
+      <p class="text-2xl mt-4">Find the right talent — not just listed, but proven.</p>
+      <p class="mt-2 italic">AI-powered skill discovery & network intelligence platform</p>
+      <p class="mt-6 text-lg">By Jeba Singh Emmanuel</p>
+    </div>
+  </section>
+
+  <!-- Slide 2: The Problem -->
+  <section class="slide bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+    <div class="max-w-5xl">
+      <h2 class="text-4xl font-semibold mb-8">The Problem</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card"><img src="images/problem-profile.png" class="w-16 h-16 mb-4 rounded-full" alt="Profile"><p>Most talent discovery tools rely on bios, titles, endorsements.</p></div>
+        <div class="card"><img src="images/problem-network.png" class="w-16 h-16 mb-4 rounded-lg" alt="Community"><p>Real skill is buried in posts, projects, and community engagement.</p></div>
+        <div class="card"><img src="images/problem-magnify.png" class="w-16 h-16 mb-4 rounded-full" alt="Search"><p>High-signal talent often goes undiscovered.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3: Recruitment Overload -->
+  <section class="slide bg-gradient-to-r from-red-100 via-orange-100 to-yellow-100">
+    <div class="max-w-5xl">
+      <h2 class="text-4xl font-semibold text-gray-800 mb-8">Recruitment Overload</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card"><img src="images/recruitment-overload.png" class="w-full mb-4 rounded-lg" alt="Overload"><h3 class="font-bold mb-2">Overwhelmed with Applications</h3><p>Hiring managers receive thousands of resumes per opening, drowning in volume and unable to efficiently shortlist candidates.</p></div>
+        <div class="card"><img src="images/recruitment-gamification.png" class="w-full mb-4 rounded-lg" alt="Gamification"><h3 class="font-bold mb-2">Gaming the System</h3><p>Video resumes and flashy gimmicks don't reveal true ability—they let gamification win over real skill signals.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4: The Solution -->
+  <section class="slide bg-white">
+    <div class="max-w-5xl">
+      <h2 class="text-4xl font-semibold mb-8">The Solution</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="card"><img src="https://picsum.photos/seed/solution1/100" class="w-16 h-16 mb-4 rounded-lg" alt="GitHub Activity"><h3 class="font-bold mb-2">GitHub Activity</h3><p>Analyze code contributions to assess real skills.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/solution2/100" class="w-16 h-16 mb-4 rounded-full" alt="Post Parser"><h3 class="font-bold mb-2">Post Parser</h3><p>Extract insights from community posts and discussions.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/solution3/100" class="w-16 h-16 mb-4 rounded-lg" alt="Network Boost"><h3 class="font-bold mb-2">Network Boost</h3><p>Leverage connections to highlight emerging talent.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/solution4/100" class="w-16 h-16 mb-4 rounded-full" alt="Signal Score"><h3 class="font-bold mb-2">Signal Score</h3><p>Quantify user influence and expertise levels.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 5: How It Works -->
+  <section class="slide bg-gradient-to-r from-green-100 to-teal-100">
+    <div class="max-w-4xl text-gray-800">
+      <h2 class="text-4xl font-semibold mb-4">How Neurograf Works for You</h2>
+      <ol class="list-decimal list-inside space-y-4 text-lg">
+        <li><strong>Search:</strong> You search by skill or interest.</li>
+        <li><strong>Map:</strong> Neurograf maps your extended network.</li>
+        <li><strong>Rank:</strong> Talent is ranked based on real-world signals and trust.</li>
+        <li><strong>Connect:</strong> Discovered users benefit from visibility and connections.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Slide 6: Use Cases Part 1 -->
+  <section class="slide bg-white">
+    <div class="max-w-5xl">
+      <h2 class="text-4xl font-semibold mb-8">Use Cases – Part 1</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card"><img src="https://picsum.photos/seed/use1/200" class="w-24 h-24 mb-4 rounded-full"><h3 class="font-bold mb-2">Find Collaborators</h3><p>Find collaborators for side projects.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/use2/200" class="w-24 h-24 mb-4 rounded-lg"><h3 class="font-bold mb-2">Match Mentors</h3><p>Match mentors and mentees based on expertise.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/use3/200" class="w-24 h-24 mb-4 rounded-full"><h3 class="font-bold mb-2">Community Mapping</h3><p>Map community expertise in DAOs or dev groups.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 7: Use Cases Part 2 -->
+  <section class="slide bg-gray-100">
+    <div class="max-w-5xl">
+      <h2 class="text-4xl font-semibold mb-8">Use Cases – Part 2</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card"><img src="https://picsum.photos/seed/use4/200" class="w-24 h-24 mb-4 rounded-lg"><h3 class="font-bold mb-2">Identify Rising Talent</h3><p>Identify rising talent early.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/use5/200" class="w-24 h-24 mb-4 rounded-full"><h3 class="font-bold mb-2">Targeted Recruiting</h3><p>Targeted recruiting through trusted networks.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/use6/200" class="w-24 h-24 mb-4 rounded-lg"><h3 class="font-bold mb-2">Community Building</h3><p>Find like-minded friends and builders.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 8: Market Opportunity -->
+  <section class="slide bg-white">
+    <div class="max-w-4xl text-gray-800">
+      <h2 class="text-4xl font-semibold mb-6">Market Opportunity</h2>
+      <ul class="list-disc list-inside space-y-3 text-lg mb-6">
+        <li>$10B+ talent discovery market.</li>
+        <li>Shift from resume-based to signal-based discovery.</li>
+        <li>AI and social graphs redefining talent discovery.</li>
+      </ul>
+      <img src="https://picsum.photos/seed/market/800" class="w-full rounded-lg shadow-lg" alt="Market Trends">
+    </div>
+  </section>
+
+  <!-- Slide 9: Why Neurograf Wins -->
+  <section class="slide bg-gray-100">
+    <div class="max-w-5xl text-gray-800">
+      <h2 class="text-4xl font-semibold mb-6">Why Neurograf Wins</h2>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-gray-200"><th class="p-4">Feature</th><th class="p-4">Neurograf</th><th class="p-4">LinkedIn</th><th class="p-4">GitHub</th></tr>
+        </thead>
+        <tbody>
+          <tr class="bg-white"><td class="p-4">Real Engagement Signals</td><td class="p-4">✔️</td><td class="p-4">❌</td><td class="p-4">❌</td></tr>
+          <tr class="bg-white"><td class="p-4">Trust & Network Analysis</td><td class="p-4">✔️</td><td class="p-4">✔️</td><td class="p-4">❌</td></tr>
+          <tr class="bg-white"><td class="p-4">Multimedia Parsing</td><td class="p-4">✔️</td><td class="p-4">❌</td><td class="p-4">✔️</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Slide 10: Business Model + Data Strategy -->
+  <section class="slide bg-white">
+    <div class="max-w-5xl text-center text-gray-800">
+      <h2 class="text-4xl font-semibold mb-6">Business Model + Data Strategy</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card"><img src="https://picsum.photos/seed/freemium/100" class="w-16 h-16 mb-4 rounded-full"><h3 class="font-bold mb-2">Freemium & Pro</h3><p>Freemium for individuals; Pro plans for teams.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/api2/100" class="w-16 h-16 mb-4 rounded-lg"><h3 class="font-bold mb-2">API Licensing</h3><p>API licensing for platforms.</p></div>
+        <div class="card"><img src="https://picsum.photos/seed/extension/100" class="w-16 h-16 mb-4 rounded-full"><h3 class="font-bold mb-2">Browser Extensions</h3><p>Browser extensions for deeper signals.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 11: Founder & Vision -->
+  <section class="slide bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100">
+    <div class="max-w-4xl text-center text-gray-800">
+      <h2 class="text-4xl font-semibold mb-6">Founder & Vision</h2>
+      <img src="https://picsum.photos/seed/portrait/200" class="w-48 h-48 rounded-full mx-auto mb-4" alt="Founder Portrait">
+      <p class="mb-2"><strong>Jeba Singh Emmanuel</strong> — AI, ex-LinkedIn & SlideShare.</p>
+      <p class="mb-2">Managed adtech, freemium, and social feed products.</p>
+      <p class="mb-4">Driven to provide opportunities to overlooked talent.</p>
+      <p class="italic">Neurograf: surfacing real talent, not just loud profiles.</p>
+      <div class="mt-6"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.linkedin.com/in/jebasingh" alt="QR Code"></div>
+    </div>
+  </section>
+
+</body>
+</html>
